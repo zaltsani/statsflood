@@ -1,0 +1,31 @@
+---
+title: 'Field Tilt'
+date: '2024-05-31'
+lastmod: '2024-11-04'
+tags: ['statistik', 'metriks']
+draft: false
+summary: Field Tilt, More than Possession
+---
+
+## Introduction
+
+Possession di sepakbola adalah salah satu statistik yang sering kita pakai selama ini  untuk menilai cara bermain sebuah tim atau pelatih. Tapi, terkadang statistik ini tidak tepat menggambarkan kenyataan di lapangan. Untuk itu, mari kita bahas statistik 𝗙𝗜𝗘𝗟𝗗 𝗧𝗜𝗟𝗧
+![Field Tilt Percentage Premier League 2023/2024](/static/images/field_tilt.png)
+
+
+Field Tilt ini pada dasarnya yaitu memperhitungkan penguasaan bola (sentuhan dan passing) sebuah tim pada sepertiga akhir lapangan. Ini mirip seperti possession, hanya saja Field Tilt memperhitungkan possession pada 𝙛𝙞𝙣𝙖𝙡 𝙩𝙝𝙞𝙧𝙙 (sepertiga akhir).
+![Final Third](/static/images/final_third.png)
+
+
+Perhitungan Field Tilt ini tidak sulit, yaitu dengan menghitung jumlah 𝙩𝙤𝙪𝙘𝙝𝙚𝙨 (sentuhan) tim pada final third dibagi oleh jumlah touches pada final third yang dilakukan oleh tim dan lawan.
+
+Contoh saja Tim A melakukan 75 touches pada final third dan Tim B melakukan 25 touches pada final third, artinya Tim A mempunyai Field Tilt sebesar 75 / (75+25) * 100 = 75% dan Tim B mempunyai Field Tilt sebesar 25 / (25+75) * 100 = 25%.
+![Example Field Tilt Calculation](/static/images/example_field_tilt_calculation.png)
+
+
+Untuk dapat melihat realitasnya, mari kita lihat pertandingan final liga eropa tahun ini antara Atalanta dan Bayer Leverkusen. Statistik babak 1 terlihat Leverkusen unggul dalam possession, tetapi berbanding terbalik dengan Field Tilt, justru Atalanta yang lebih unggul.
+![Match Stats Final Europa League Atalanta vs Bayer Leverkusen](/static/images/match_stats_ata_b04.png)
+
+Ini karena possession yang dilakukan Leverkusen gagal masuk ke dalam final third Atalanta. Touches in final third Leverkusen hanya berada di angka 54, sedangkan Atalanta ada di angka 84.
+
+Dengan metrik Field Tilt ini, kita bisa mendapatkan pengetahuan mengenai bagaimana sebuah tim mengontrol teritorial  dan dominansi pada pertandingan, daripada kita hanya melihat dari statistik possession.
