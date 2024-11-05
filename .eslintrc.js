@@ -38,5 +38,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+
+    // Disable the 'no-var' rule globally
+    'no-var': 'off',
   },
 }
