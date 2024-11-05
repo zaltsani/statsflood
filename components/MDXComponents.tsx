@@ -7,6 +7,8 @@ import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import Pitch from './soccer/Pitch'
 import MatchStats from './soccer/match-stats'
+import Momentum from './soccer/Momentum'
+import Chalkboard from './soccer/Chalkboard'
 
 export const components: MDXComponents = {
   Image,
@@ -16,5 +18,7 @@ export const components: MDXComponents = {
   table: TableWrapper,
   BlogNewsletterForm,
   Pitch,
-  MatchStats
+  MatchStats,
+  Momentum,
+  Chalkboard
 }

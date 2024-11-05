@@ -27,6 +27,8 @@ export default function MatchStats({ match_id }) {
     const awayPass = pass.filter(d => d.h_a === 'a')
     
     // Shots Data
+    const homeTeamName = shots_data.general.homeTeam.name
+    const awayTeamName = shots_data.general.awayTeam.name
     const homeTeamId = shots_data.general.homeTeam.id
     const awayTeamId = shots_data.general.awayTeam.id
     // const shots = shots_data.content.shotmap.shots
@@ -59,7 +61,7 @@ export default function MatchStats({ match_id }) {
     return (
         <>
             <p className="text-center font-bold font-lg">Match Statistics</p>
-            <ButtonGroup size="small" variant="outlined" aria-label="Small button group">
+            <ButtonGroup size="small" variant="outlined" aria-label="Small button group" className="pb-6">
                 <Button variant={`${statsType === 'topStats' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('topStats')}>Top Stats</Button>
                 <Button variant={`${statsType === 'shots' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('shots')}>Shots</Button>
                 <Button variant={`${statsType === 'xg' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('xg')}>Expected Goals (xG)</Button>
@@ -69,22 +71,20 @@ export default function MatchStats({ match_id }) {
                 <Button variant={`${statsType === 'discipline' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('discipline')}>Discipline</Button>
             </ButtonGroup>
 
-            {/* {summaryStats.map((stats, index) => (
-                <li className="grid grid-cols-3 text-lg py-5" key={stats.title}>
-                    <div className="text-start">
-                        <span className="bg-blue-800 p-4 rounded-3xl">{stats.home}</span>
-                    </div>
-                    <div  className="text-center">
-                        <span className="p-4">{stats.title}</span>
-                    </div>
-                    <div className="text-end">
-                        <span className="p-4 text-end">{stats.away}</span>
-                    </div>
-                </li>
-            ))} */}
+            <li className="grid grid-cols-3 text-md py-3">
+                <div className="text-start">
+                    <span>{homeTeamName}</span>
+                </div>
+                <div  className="text-center">
+                    <span>Team</span>
+                </div>
+                <div className="text-end">
+                    <span>{awayTeamName}</span>
+                </div>
+            </li>
 
-            {statsList.map(stats => (
-                <li className="grid grid-cols-3 text-md py-3" key={stats.title}>
+            {statsList.map((stats, index) => (
+                <li className="grid grid-cols-3 text-md py-3" key={index}>
                     <div className="text-start">
                         <span className={`${stats.highlighted === 'home' ? 'bg-blue-800 text-white' : ''} p-2 px-5 rounded-3xl`}>{stats.stats[0]}{stats.key === "BallPossesion" ? '%' : ''}</span>
                     </div>
