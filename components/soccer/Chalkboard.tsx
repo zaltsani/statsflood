@@ -85,7 +85,7 @@ export default function Chalkboard({ match_id }) {
             <div className="grid grid-cols-3">
                 <ButtonGroup size="small" variant="outlined" aria-label="Small button group" className="col-span-2">
                     {listStatsType.map(stats => (
-                        <Button variant={`${statsType === stats.key ? 'contained' : 'outlined'}`} onClick={() => setStatsType(stats.key)}>{stats.name}</Button>
+                        <Button key={stats.key} variant={`${statsType === stats.key ? 'contained' : 'outlined'}`} onClick={() => setStatsType(stats.key)}>{stats.name}</Button>
                     ))}
                 </ButtonGroup>
                 <ButtonGroup size="small" variant="outlined" aria-label="Small button group" className="flex justify-end">
