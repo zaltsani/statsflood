@@ -60,8 +60,9 @@ export default function MatchStats({ match_id }) {
 
     return (
         <>
-            <p className="text-center font-bold font-lg">Match Statistics</p>
-            <ButtonGroup size="small" variant="outlined" aria-label="Small button group" className="pb-6">
+            <p className="text-center font-bold font-lg mb-0">Match Statistics</p>
+            <div className="overflow-x-auto">
+            <ButtonGroup size="small" variant="outlined" aria-label="Small button group">
                 <Button variant={`${statsType === 'topStats' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('topStats')}>Top Stats</Button>
                 <Button variant={`${statsType === 'shots' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('shots')}>Shots</Button>
                 <Button variant={`${statsType === 'xg' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('xg')}>Expected Goals (xG)</Button>
@@ -70,8 +71,9 @@ export default function MatchStats({ match_id }) {
                 <Button variant={`${statsType === 'duels' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('duels')}>Duels</Button>
                 <Button variant={`${statsType === 'discipline' ? 'contained' : 'outlined'}`} onClick={() => setStatsType('discipline')}>Discipline</Button>
             </ButtonGroup>
+            </div>
 
-            <li className="grid grid-cols-3 text-md py-3">
+            <li className="grid grid-cols-3 text-md py-3 flex">
                 <div className="text-start">
                     <span>{homeTeamName}</span>
                 </div>

@@ -9,14 +9,18 @@ export default function Momentum({ match_id }) {
     const data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
     const momentumData = data.content.matchFacts.momentum.main.data
     momentumData.unshift({minute: 0, value: 0})
-    // console.log(momentumData)
-    const margin = {
-        top: 40, right: 40, bottom: 25, left: 40
-    }
+
+    const margin = {top: 40, right: 40, bottom: 25, left: 40}
     const width = 1000
     const height = 500
     const innerWidth = width - margin.left - margin.right
     const innerHeight = height - margin.top - margin.bottom
+
+    const lineColor = 'grey'
+    const lineWidth = 5
+
+    const homeTeamName = data.general.homeTeam.name
+    const awayTeamName = data.general.awayTeam.name
     
     const xScale = d3.scaleLinear()
         .domain([0, d3.max(momentumData.map(d => d.minute))])
@@ -24,8 +28,6 @@ export default function Momentum({ match_id }) {
     const yScale = d3.scaleLinear()
         .domain([-100, 100])
         .range([innerHeight, 0]);
-
-    console.log(yScale(10))
 
     return (
         <div className="">
@@ -40,17 +42,31 @@ export default function Momentum({ match_id }) {
                         yScale={yScale}
                         xAccessor="minute"
                         yAccessor="value"
-                        stroke="grey"
-                        strokeWidth={5}
+                        stroke={lineColor}
+                        strokeWidth={lineWidth}
                     />
                     <line
                         x1={0}
                         x2={xScale(d3.max(momentumData.map(d => d.minute)))}
                         y1={innerHeight/2}
                         y2={innerHeight/2}
-                        stroke="grey"
-                        strokeWidth={5}
+                        stroke={lineColor}
+                        strokeWidth={lineWidth}
                     />
+                    <line
+                        x1={0}
+                        x2={0}
+                        y1={0}
+                        y2={innerHeight}
+                        stroke={lineColor}
+                        strokeWidth={lineWidth}
+                    />
+                    {/* <text
+                        x={0}
+                        y={0}
+                    >
+                        {homeTeamName}
+                    </text> */}
             </ChartContainer>
         </div>
     )
