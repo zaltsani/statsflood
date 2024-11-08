@@ -54,7 +54,6 @@ export default function PassingNetwork({ match_id }) {
                 'numberPasses': passesToConnection.length
             })
         }
-        // console.log(passXTotal)
         passingNetworkData.push({
             playerId: starterPlayerIds[index],
             playerName: playerIdNameDictionary[playerId],
@@ -62,7 +61,6 @@ export default function PassingNetwork({ match_id }) {
             passingConnection: passingConnection
         })
     }
-    console.log(playerIdNameDictionary)
 
     // Scale
     const dimensions = require('./dimensions.json')
@@ -111,6 +109,7 @@ export default function PassingNetwork({ match_id }) {
                 {passingNetworkData.map((d) => (
                     <g key={d.playerName} >
                         <text
+                            className="fill-current text-current"
                             x={xScale(d.average_passing_location[0])}
                             y={yScale(d.average_passing_location[1])}
                             style={{

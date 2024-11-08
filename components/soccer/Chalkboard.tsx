@@ -20,6 +20,13 @@ export default function Chalkboard({ match_id }) {
         // {name: 'Defence', key: 'defence'},
     ]
 
+    const margin = {
+        top: 2,
+        left: 2,
+        right: 2,
+        bottom: 5
+    }
+
     const innerWidth = dimension.length
     const innerHeight = dimension.width * dimension.aspect
 

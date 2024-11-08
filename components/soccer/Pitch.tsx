@@ -10,7 +10,7 @@ export default function Pitch(props) {
         top: 2,
         left: 2,
         right: 2,
-        bottom: 2
+        bottom: 5
     }
     const lineWidth = 0.2
     const lineColor = 'grey'
@@ -135,6 +135,31 @@ export default function Pitch(props) {
                         fill={lineColor}
                     />
                 </g>
+                <line
+                    x1={0.35*innerWidth}
+                    x2={0.65*innerWidth}
+                    y1={innerHeight + margin.bottom/2}
+                    y2={innerHeight + margin.bottom/2}
+                    stroke="grey"
+                    stroke-width={.2}
+                />
+                <path
+                    d={`M ${0.65*innerWidth} ${innerHeight + margin.bottom/2}
+                        L ${0.63*innerWidth} ${innerHeight + margin.bottom/2 - margin.bottom/4}
+                        L ${0.63*innerWidth} ${innerHeight + margin.bottom/2 + margin.bottom/4}
+                        L ${0.65*innerWidth} ${innerHeight + margin.bottom/2}`}
+                    fill="grey"
+                />
+                <text
+                    x={innerWidth/2}
+                    y={innerHeight + margin.bottom/2}
+                    style={{
+                        fontSize: "1.5px",
+                        dominantBaseline: "hanging",
+                        textAnchor: "middle",
+                        fontWeight: "bold"
+                    }}
+                >Attacking Direction</text>
                 {props.children}
         </ChartContainer>
     )

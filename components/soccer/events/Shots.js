@@ -6,7 +6,7 @@ export default function Shots({ data, innerWidth, innerHeight }) {
     const yScale = d3.scaleLinear().domain([ 0, 68 ]).range([ innerHeight, 0 ])
     const xgScale = d3.scaleLinear().domain([ 0, 1 ]).range([ 0.5, 4 ])
 
-    // console.log(data)
+    console.log(data)
 
     useEffect(() => {
         const graph = d3.select("#shots-events-group")
@@ -17,10 +17,10 @@ export default function Shots({ data, innerWidth, innerHeight }) {
                 .attr("class", "shot-event")
         shotEvent
             .append("circle")
+                .attr("class", d => d.eventType === 'Goal' ? "fill-current text-red-500" : "fill-current text-gray-400")
                 .attr("cx", d => xScale(d.x))
                 .attr("cy", d => yScale(d.y))
                 .attr("r", d => xgScale(d.expectedGoals))
-                .attr("fill", "yellow")
     })
 
     return (

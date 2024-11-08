@@ -10,6 +10,9 @@ import MatchStats from './soccer/match-stats'
 import Momentum from './soccer/Momentum'
 import Chalkboard from './soccer/Chalkboard'
 import PassingNetwork from './soccer/PassingNetwork'
+import PlayerStats from './soccer/PlayerStats'
+import XGMatchStory from './soccer/XGMatchStory'
+import TouchHeatmaps from './soccer/TouchHeatmaps'
 
 export const components: MDXComponents = {
   Image,
@@ -23,4 +26,7 @@ export const components: MDXComponents = {
   Momentum,
   Chalkboard,
   PassingNetwork,
+  PlayerStats,
+  XGMatchStory,
+  TouchHeatmaps,
 }
