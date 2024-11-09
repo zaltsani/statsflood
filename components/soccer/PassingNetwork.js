@@ -65,6 +65,7 @@ export default function PassingNetwork({ match_id }) {
     // Scale
     const dimensions = require('./dimensions.json')
     const dimension = dimensions['opta']
+    const margin = {top: 2, left: 2, right: 2, bottom: 5}
     const innerWidth = dimension.length
     const innerHeight = dimension.width * dimension.aspect
     const xScale = d3.scaleLinear().domain([ 0, dimension.length ]).range([ 0, innerWidth ])
@@ -78,7 +79,11 @@ export default function PassingNetwork({ match_id }) {
                 <Button variant={`${homeAway === 'home' ? 'contained' : 'outlined'}`} color="success" onClick={() => setHomeAway('home')}>Home</Button>
                 <Button variant={`${homeAway === 'away' ? 'contained' : 'outlined'}`} color="success" onClick={() => setHomeAway('away')}>Away</Button>
             </ButtonGroup>
-            <Pitch>
+            <Pitch
+                margin={margin}
+                innerWidth={innerWidth}
+                innerHeight={innerHeight}
+            >
                 <g id="passing-network">
                     {passingNetworkData.map((d) => (
                         <g key={d.playerName} id="player-passing-network">

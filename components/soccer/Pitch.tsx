@@ -6,19 +6,15 @@ import ChartContainer from "../chart/ChartContainer";
 export default function Pitch(props) {
     const dimensions = require('./dimensions.json')
     const dimension = dimensions['opta']
-    const margin = {
-        top: 2,
-        left: 2,
-        right: 2,
-        bottom: 5
-    }
-    const lineWidth = 0.2
-    const lineColor = 'grey'
+    const margin = props.margin
 
-    const width = dimension.length + margin.left + margin.right
-    const height = dimension.width * dimension.aspect + margin.top + margin.bottom
-    const innerWidth = dimension.length
-    const innerHeight = dimension.width * dimension.aspect
+    const width = props.innerWidth + margin.left + margin.right
+    const height = props.innerHeight + margin.top + margin.bottom
+    const innerWidth = props.innerWidth
+    const innerHeight = props.innerHeight
+
+    const lineWidth = innerWidth / 500
+    const lineColor = 'grey'
 
     // Scale X and Y
     const xScale = d3.scaleLinear().domain([ 0, dimension.length ]).range([ 0, innerWidth ])
@@ -33,6 +29,16 @@ export default function Pitch(props) {
             width={width}
             height={height}
             margin={margin}>
+                <rect
+                    x={-margin.left}
+                    y={-margin.top}
+                    width={width}
+                    height={height}
+                    fill={props.fillColor ? props.fillColor : "none"}
+                    rx={5}
+                    ry={5}
+                />
+                {props.children}
                 <g 
                     id="pitch"
                     fill="none"
@@ -151,16 +157,17 @@ export default function Pitch(props) {
                     fill="grey"
                 />
                 <text
+                    className="fill-current text-current"
                     x={innerWidth/2}
                     y={innerHeight + margin.bottom/2}
                     style={{
-                        fontSize: "1.5px",
+                        fontSize: innerWidth/50,
                         dominantBaseline: "hanging",
                         textAnchor: "middle",
                         fontWeight: "bold"
                     }}
                 >Attacking Direction</text>
-                {props.children}
+                
         </ChartContainer>
     )
 }

@@ -63,7 +63,11 @@ export default function Chalkboard({ match_id }) {
                 </div>
             </div>
 
-            <Pitch>
+            <Pitch
+                margin={margin}
+                innerWidth={innerWidth}
+                innerHeight={innerHeight}
+            >
                 {statsType === 'passes' ? (
                     <Passes
                         data={passesData}
