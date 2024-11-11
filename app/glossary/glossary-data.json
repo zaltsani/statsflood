@@ -1,0 +1,35 @@
+[
+    {
+        "title": "xG (Expected Goals)",
+        "description": "Expected Goals (xG) adalah ukuran kualitas shooting sebelum pemain melakukan tembakan berdasarkan beberapa variable, seperti jarak shooting, sudut shooting, dan lainnya. xG ini merupakan angka dari 0 sampai 1, dengan 0 berarti shooting tidak ada kemungkinan untuk masuk, sedangkan 1 menunjukkan shooting sudah pasti masuk."
+    },
+    {
+        "title": "xGOT (Expected Goals on Target)",
+        "description": "Expected Goals on Target (xGOT) adalah ukuran kualitas shooting setelah pemain melakukan tembakan tepat sasaran melihat letak bola ditempatkan ke gawang musuh. xGOT merupakan angka dari 0 sampai 1."
+    },
+    {
+        "title": "Progressive Passes",
+        "description": "Passing sukses dengan jarak minimum 10 meter dan memindahkan bola ke arah gawang lawan tidak kurang dari 25 persen."
+    },
+    {
+        "title": "Key Passes",
+        "description": "Final pass dari pemain untuk rekannya yang melakukan shooting tidak berbuah gol."
+    },
+    {
+        "title": "Field Tilt",
+        "description": "Field Tilt adalah metriks yang memperhitungkan penguasaan bola (sentuhan dan passing) sebuah tim pada sepertiga akhir lapangan dibagi oleh jumlah penguasaan bola dari kedua tim.",
+        "url": "/blog/field-tilt"
+    },
+    {
+        "title": "Passes per Defensive Action (PPDA)",
+        "description": "PPDA adalah metriks yang menghitung seberapa banyak tim memberikan lawan passing sebelum tim melakukan aksi defensif seperti tackle, intersep, atau clearance. Perhitungan passing lawan ini hanya dihitung di 60% akhir lapangan. Metriks ini digunakan untuk menghitung intensitas pressing dari sebuah tim."
+    },
+    {
+        "title": "Shot Conversion %",
+        "description": "Shot Conversion % adalah persentase dari gol per shot."
+    },
+    {
+        "title": "Per 90 Metriks",
+        "description": "Per 90 metriks adalah penambahan konteks di mana statistik yang dihitung dari statistik dibagi oleh total menit per 90 menit permainan."
+    }
+]
