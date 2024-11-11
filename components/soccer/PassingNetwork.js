@@ -6,8 +6,8 @@ import * as d3 from "d3"
 import { Button, ButtonGroup } from "@mui/material"
 
 export default function PassingNetwork({ match_id }) {
-    const match_data = require(`@/data/soccer_data/match_data/${match_id}.json`)
-    const events_data = require(`@/data/soccer_data/events_data/${match_id}.json`)
+    const match_data = require(`@/components/soccer_data/match_data/${match_id}.json`)
+    const events_data = require(`@/components/soccer_data/events_data/${match_id}.json`)
     const homeTeamId = match_data['home']['teamId']
     const awayTeamId = match_data['away']['teamId']
 

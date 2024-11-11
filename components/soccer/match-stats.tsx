@@ -8,9 +8,9 @@ import { useState } from "react";
 
 export default function MatchStats({ match_id }) {
 
-    const match_data = require(`@/data/soccer_data/match_data/${match_id}.json`)
-    const events_data = require(`@/data/soccer_data/events_data/${match_id}.json`)
-    const shots_data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
+    const match_data = require(`@/components/soccer_data/match_data/${match_id}.json`)
+    const events_data = require(`@/components/soccer_data/events_data/${match_id}.json`)
+    const shots_data = require(`@/components/soccer_data/shots_data/${match_id}.json`)
 
     const [statsType, setStatsType] = useState('topStats')
 

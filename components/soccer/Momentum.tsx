@@ -3,10 +3,9 @@
 import * as d3 from "d3"
 import ChartContainer from "../chart/ChartContainer"
 import Curve from "../chart/Curve"
-import { Card } from "@mui/material"
 
 export default function Momentum({ match_id }) {
-    const data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
+    const data = require(`@/components/soccer_data/shots_data/${match_id}.json`)
     const momentumData = data.content.matchFacts.momentum.main.data
     momentumData.unshift({minute: 0, value: 0})
 

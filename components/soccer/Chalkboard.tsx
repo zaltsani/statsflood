@@ -7,9 +7,9 @@ import Shots from "./events/Shots"
 import Passes from "./events/Passes"
 
 export default function Chalkboard({ match_id }) {
-    const events_data = require(`@/data/soccer_data/events_data/${match_id}.json`)
+    const events_data = require(`@/components/soccer_data/events_data/${match_id}.json`)
     const dimensions = require('./dimensions.json')
-    const raw_shots_data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
+    const raw_shots_data = require(`@/components/soccer_data/shots_data/${match_id}.json`)
     const dimension = dimensions['opta']
 
     const [homeAway, setHomeAway] = useState('home')

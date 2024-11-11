@@ -6,8 +6,8 @@ import * as d3 from "d3"
 import { Button, ButtonGroup, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, Select } from '@mui/material'
 
 export default function TouchHeatmaps({ match_id }) {
-  const match_data = require(`@/data/soccer_data/match_data/${match_id}.json`)
-  const events_data = require(`@/data/soccer_data/events_data/${match_id}.json`)
+  const match_data = require(`@/components/soccer_data/match_data/${match_id}.json`)
+  const events_data = require(`@/components/soccer_data/events_data/${match_id}.json`)
   const touchData = events_data.filter(d => d.isTouch && d.x && d.y)
 
   const [homeAway, setHomeAway] = useState('home')

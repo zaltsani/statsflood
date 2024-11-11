@@ -5,7 +5,7 @@ import ChartContainer from "../chart/ChartContainer"
 import { useEffect } from "react"
 
 export default function XGMatchStory({ match_id }) {
-    const raw_data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
+    const raw_data = require(`@/components/soccer_data/shots_data/${match_id}.json`)
 
     const homeTeamName = raw_data.general.homeTeam.name
     const awayTeamName = raw_data.general.awayTeam.name

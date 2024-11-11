@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
 export default function PlayerStats({ match_id }) {
-    const raw_data = require(`@/data/soccer_data/shots_data/${match_id}.json`)
+    const raw_data = require(`@/components/soccer_data/shots_data/${match_id}.json`)
     const statsData = raw_data.content.playerStats
     const lineups = raw_data.content.lineup
     const homeLineups = lineups.homeTeam
